@@ -35,6 +35,11 @@ void search(InputIterator first, InputIterator last, Predicate Pred, const strin
 	}
 }
 
+bool mypred(const int x)
+{
+	return x<5; //наше условие, что элемент в деке меньше чем 5 
+}
+
 int main()
 {
 	setlocale(LC_ALL, "Russian");
@@ -57,13 +62,13 @@ int main()
 	std::sort(deque1.begin(), deque1.end(), std::greater<long>());			// по убыванию
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
 	system("Pause");
-	std::sort(deque1.begin(), deque1.end(), std::less<long>());				// по возрастанию
+	//std::sort(deque1.begin(), deque1.end(), std::less<long>());				// по возрастанию
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
 
-	 /*for (auto it = deque1.rbegin(); it != deque1.rend(); ++it) // сортировка
-	 {
-		 cout << it -> first << " => " << it -> second << endl;
-	 }*/
+	stable_partition(deque1.begin(), deque1.end(), mypred); //условие 
+	cout << "\nУсловие для элементов > 5: ";
+	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " "));
+
 	system("pause");
 }
 
