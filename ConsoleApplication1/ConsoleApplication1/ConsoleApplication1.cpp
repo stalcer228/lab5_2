@@ -54,10 +54,10 @@ int main()
 
 	cout << "\n—генерированный дек: ";
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
-	std::sort(deque1.begin(), deque1.end(), std::greater<long>());
+	std::sort(deque1.begin(), deque1.end(), std::greater<long>());			// по убыванию
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
 	system("Pause");
-	std::sort(deque1.begin(), deque1.end(), std::less<long>());
+	std::sort(deque1.begin(), deque1.end(), std::less<long>());				// по возрастанию
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
 
 	 /*for (auto it = deque1.rbegin(); it != deque1.rend(); ++it) // сортировка
